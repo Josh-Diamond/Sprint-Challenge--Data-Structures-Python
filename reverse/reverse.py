@@ -45,13 +45,15 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
+    # a -> b -> c -> d
+    # d -> c -> b -> a
     current = self.head
     previous_node = None
-    while current is not None: # loop until list is reversed
-      next_node = current.next_node # grab next_node off of current
-      current.next_node = previous_node # set current's next_node to previous
-      previous_node, current = current, next_node # update previous_node to current and current to next_node
-    self.head = previous_node # set new head as former tail
+    while current is not None: # loop through nodes
+      next_node = current.next_node # grab next_node off of current, and store in variable
+      current.next_node = previous_node # set current's next_node to previous (flip arrow)
+      previous_node, current = current, next_node # update previous_node to current and current to next_node (move to next node)
+    self.head = previous_node # set new head as former tail (makes the reverse!)
 
 test = LinkedList()
 test.add_to_head(1)
