@@ -52,7 +52,8 @@ class LinkedList:
     while current is not None: # loop through nodes
       next_node = current.next_node # grab next_node off of current, and store in variable
       current.next_node = previous_node # set current's next_node to previous (flip arrow)
-      previous_node, current = current, next_node # update previous_node to current and current to next_node (move to next node)
+      previous_node = current # sets current's previous node to current (flip arrow)
+      current = next_node # sets current to next_node (moves loop to next node value)
     self.head = previous_node # set new head as former tail (makes the reverse!)
 
 test = LinkedList()
